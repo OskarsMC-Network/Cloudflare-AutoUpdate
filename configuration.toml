@@ -1,0 +1,8 @@
+[api]
+base = "https://api.cloudflare.com/client/v4/"
+
+[misc]
+silence_key_in_console = true
+
+[actions]
+zone_identifiers = []
