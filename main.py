@@ -8,7 +8,8 @@ base_url = config_data.get("api").get("base")
 api_key = api_reader.get_api_key(not config_data.get("misc").get("silence_key_in_console"))
 
 print("[Local] Generating auth headers")
-auth_headers = {'Authorization': f'Bearer {api_key}'}
+api_key = api_key.strip("\n")
+auth_headers = {'Authorization': f"Bearer {api_key}"}
 
 print("[Local] Sending Request")
 resp = requests.get(url=f"{base_url}user/tokens/verify", headers=auth_headers)
